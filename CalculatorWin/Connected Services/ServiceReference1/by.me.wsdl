@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://by.me" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://by.me" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://by.me/Imports">
+      <xsd:import namespace="http://by.me" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMath_Multiply_InputMessage">
+    <wsdl:part name="parameters" element="tns:Multiply" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Multiply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Multiply_OverflowExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System" name="detail" element="q1:OverflowException" />
+  </wsdl:message>
+  <wsdl:message name="IMath_MultiplyDouble_InputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyDouble" />
+  </wsdl:message>
+  <wsdl:message name="IMath_MultiplyDouble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyDoubleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Divide_InputMessage">
+    <wsdl:part name="parameters" element="tns:Divide" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Divide_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivideResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Divide_DivideByZeroExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/System" name="detail" element="q2:DivideByZeroException" />
+  </wsdl:message>
+  <wsdl:message name="IMath_DivideDouble_InputMessage">
+    <wsdl:part name="parameters" element="tns:DivideDouble" />
+  </wsdl:message>
+  <wsdl:message name="IMath_DivideDouble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivideDoubleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMath_DivideDouble_DivideByZeroExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/System" name="detail" element="q3:DivideByZeroException" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMath_AddDouble_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDouble" />
+  </wsdl:message>
+  <wsdl:message name="IMath_AddDouble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDoubleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Subtract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subtract" />
+  </wsdl:message>
+  <wsdl:message name="IMath_Subtract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMath_SubtractDouble_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractDouble" />
+  </wsdl:message>
+  <wsdl:message name="IMath_SubtractDouble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractDoubleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMath">
+    <wsdl:operation name="Multiply">
+      <wsdl:input wsaw:Action="http://by.me/IMath/Multiply" message="tns:IMath_Multiply_InputMessage" />
+      <wsdl:output wsaw:Action="http://by.me/IMath/MultiplyResponse" message="tns:IMath_Multiply_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://by.me/IMath/MultiplyOverflowExceptionFault" name="OverflowExceptionFault" message="tns:IMath_Multiply_OverflowExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyDouble">
+      <wsdl:input wsaw:Action="http://by.me/IMath/MultiplyDouble" message="tns:IMath_MultiplyDouble_InputMessage" />
+      <wsdl:output wsaw:Action="http://by.me/IMath/MultiplyDoubleResponse" message="tns:IMath_MultiplyDouble_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <wsdl:input wsaw:Action="http://by.me/IMath/Divide" message="tns:IMath_Divide_InputMessage" />
+      <wsdl:output wsaw:Action="http://by.me/IMath/DivideResponse" message="tns:IMath_Divide_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://by.me/IMath/DivideDivideByZeroExceptionFault" name="DivideByZeroExceptionFault" message="tns:IMath_Divide_DivideByZeroExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DivideDouble">
+      <wsdl:input wsaw:Action="http://by.me/IMath/DivideDouble" message="tns:IMath_DivideDouble_InputMessage" />
+      <wsdl:output wsaw:Action="http://by.me/IMath/DivideDoubleResponse" message="tns:IMath_DivideDouble_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://by.me/IMath/DivideDoubleDivideByZeroExceptionFault" name="DivideByZeroExceptionFault" message="tns:IMath_DivideDouble_DivideByZeroExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://by.me/IMath/Add" message="tns:IMath_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://by.me/IMath/AddResponse" message="tns:IMath_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDouble">
+      <wsdl:input wsaw:Action="http://by.me/IMath/AddDouble" message="tns:IMath_AddDouble_InputMessage" />
+      <wsdl:output wsaw:Action="http://by.me/IMath/AddDoubleResponse" message="tns:IMath_AddDouble_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <wsdl:input wsaw:Action="http://by.me/IMath/Subtract" message="tns:IMath_Subtract_InputMessage" />
+      <wsdl:output wsaw:Action="http://by.me/IMath/SubtractResponse" message="tns:IMath_Subtract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubtractDouble">
+      <wsdl:input wsaw:Action="http://by.me/IMath/SubtractDouble" message="tns:IMath_SubtractDouble_InputMessage" />
+      <wsdl:output wsaw:Action="http://by.me/IMath/SubtractDoubleResponse" message="tns:IMath_SubtractDouble_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
