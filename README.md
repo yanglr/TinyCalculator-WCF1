@@ -13,7 +13,7 @@ The solution includes three projects:
 
 **Examples**
 
-Divide:
+Divide:<br>
 ![Divide](https://raw.githubusercontent.com/yanglr/TinyCalculator-WCF1/master/ScreenShots/Divide.png)
 
 
