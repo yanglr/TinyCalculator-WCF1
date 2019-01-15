@@ -2,9 +2,9 @@
 TinyCalculator-WCF, built using WCF, Windows Forms and C#.
 
 The solution includes three projects:
-- A WCF service library
-- A console service host
-- A Windows Forms client with the UI.
+- A "WCF service library" project to construct the services as library.
+- A console service (visual C# Console App project) as host.
+- A Windows Forms project with the UI as client.
 
 ## Main functionalities:
 - Basic: +, -, *, /
