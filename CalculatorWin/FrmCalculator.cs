@@ -35,8 +35,8 @@ namespace CalculatorWin
                 }
                 else if(radDouble.Checked)
                 {
-                    double x = Convert.ToSingle(txtX.Text);
-                    double y = Convert.ToSingle(txtY.Text);
+                    double x = Convert.ToDouble(txtX.Text);
+                    double y = Convert.ToDouble(txtY.Text);
                     double result = _client.MultiplyDouble(x, y);
                     txtResult.Text = result.ToString();
                 }
@@ -69,8 +69,8 @@ namespace CalculatorWin
                 }
                 else if(radDouble.Checked)
                 {
-                    double x = Convert.ToSingle(txtX.Text);
-                    double y = Convert.ToSingle(txtY.Text);
+                    double x = Convert.ToDouble(txtX.Text);
+                    double y = Convert.ToDouble(txtY.Text);
                     double result = _client.DivideDouble(x, y);
                     txtResult.Text = result.ToString();
                 }
@@ -92,7 +92,7 @@ namespace CalculatorWin
             _client.Close();
         }
 
-        private void bottonAdd_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
             txtResult.Text = string.Empty;
 

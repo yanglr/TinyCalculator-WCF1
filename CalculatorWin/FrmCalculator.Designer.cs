@@ -41,7 +41,7 @@
             this.btnDivide = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonSubtract = new System.Windows.Forms.Button();
-            this.bottonAdd = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -173,16 +173,16 @@
             this.buttonSubtract.UseVisualStyleBackColor = true;
             this.buttonSubtract.Click += new System.EventHandler(this.buttonSubtract_Click);
             // 
-            // bottonAdd
+            // buttonAdd
             // 
-            this.bottonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.bottonAdd.Location = new System.Drawing.Point(18, 106);
-            this.bottonAdd.Name = "bottonAdd";
-            this.bottonAdd.Size = new System.Drawing.Size(62, 23);
-            this.bottonAdd.TabIndex = 46;
-            this.bottonAdd.Text = "Add";
-            this.bottonAdd.UseVisualStyleBackColor = true;
-            this.bottonAdd.Click += new System.EventHandler(this.bottonAdd_Click);
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonAdd.Location = new System.Drawing.Point(18, 106);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(62, 23);
+            this.buttonAdd.TabIndex = 46;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label3
             // 
@@ -221,7 +221,7 @@
             this.Controls.Add(this.btnDivide);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonSubtract);
-            this.Controls.Add(this.bottonAdd);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtStatus);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -250,7 +250,7 @@
         private System.Windows.Forms.Button btnDivide;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonSubtract;
-        private System.Windows.Forms.Button bottonAdd;
+        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtStatus;
     }
